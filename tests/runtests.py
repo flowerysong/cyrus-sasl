@@ -381,7 +381,7 @@ def gssapi_tests(testdir):
     """ SASL/GSSAPI Tests """
     env = setup_socket_wrappers(testdir)
     kdc, kenv = setup_kdc(testdir, env)
-    #print("KDC: {}, ENV: {}".format(kdc, kenv))
+    print("KDC: {}, ENV: {}".format(kdc, kenv))
     kenv['KRB5_TRACE'] = os.path.join(testdir, 'trace.log')
 
     err = 0
@@ -503,7 +503,7 @@ def plain_mismatch_test(sasldbfile, sasldbenv):
 
 def plain_tests(testdir):
     sasldbfile, sasldbenv = setup_plain(testdir)
-    #print("DB file: {}, ENV: {}".format(sasldbfile, sasldbenv))
+    print("DB file: {}, ENV: {}".format(sasldbfile, sasldbenv))
     print('SASLDB PLAIN:')
     print('    ', end='')
     plain_test(sasldbfile, sasldbenv)
