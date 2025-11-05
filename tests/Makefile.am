@@ -75,3 +75,6 @@ all: $(check_PROGRAMS)
 
 check:
 	$(srcdir)/runtests.py $(CHECKARGS)
+
+clean-local:
+	-rm -rf .tests
