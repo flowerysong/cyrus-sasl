@@ -14,13 +14,13 @@ jobs:
         run: sudo apt update
 
       - name: Install dependencies
-        run: sudo apt install krb5-kdc krb5-admin-server libkrb5-dev liblmdb-dev libnss-wrapper libsocket-wrapper
+        run: sudo apt install krb5-kdc krb5-admin-server libkrb5-dev liblmdb-dev libnss-wrapper libpod-pom-view-restructured-perl libsocket-wrapper python3-sphinx-rtd-theme sphinx-common
 
       - name: Build
         run: |
           autoreconf -fiv
           ./configure
-          make check
+          make distcheck
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v4
